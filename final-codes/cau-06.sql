@@ -52,8 +52,17 @@ select
     semester,
     gpa,
     (
+    
         select sum(grade * credits) / sum(credits)
-        from view_takes_numeric_score as C
+        from (
+            select 
+                id, 
+                course_id, 
+                credits,
+                max(grade) as grade
+            from view_takes_numeric_score where term <= P.term
+            group by course_id, id, credits
+        ) as C
         where term <= P.term and P.id = C.id
         group by C.id
     ) as cpa

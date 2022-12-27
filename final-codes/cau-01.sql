@@ -5,19 +5,19 @@ returns real as
 begin
     return (
     case
-       WHEN @grade='A'  THEN 4.0
-       WHEN @grade='A-' THEN 3.5
-       WHEN @grade='A+' THEN 4.5
-       WHEN @grade='B'  THEN 3.0
-       WHEN @grade='B-' THEN 3.0
-       WHEN @grade='B+' THEN 3.5
-       WHEN @grade='C'  THEN 2.0
-       WHEN @grade='C-' THEN 2.0
-       WHEN @grade='C+' THEN 2.5
-       WHEN @grade='D'  THEN 1.0
-       WHEN @grade='D-' THEN 1.0
-       WHEN @grade='D+' THEN 1.5
-       WHEN @grade='F'  THEN 0 
+      WHEN @grade='A'  THEN 4.0
+      WHEN @grade='A-' THEN 4.0
+      WHEN @grade='A+' THEN 4.5
+      WHEN @grade='B'  THEN 3.0
+      WHEN @grade='B-' THEN 3.0
+      WHEN @grade='B+' THEN 3.5
+      WHEN @grade='C'  THEN 2.0
+      WHEN @grade='C-' THEN 2.0
+      WHEN @grade='C+' THEN 2.5
+      WHEN @grade='D'  THEN 1.0
+      WHEN @grade='D-' THEN 1.0
+      WHEN @grade='D+' THEN 1.5
+      WHEN @grade='F'  THEN 0 
       ELSE 0
     END
     )
