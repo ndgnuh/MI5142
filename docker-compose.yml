@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=P4ssw0rd
+      - MSSQL_PID=Express
+    network_mode: host
+
+  dbgate:
+    image: dbgate/dbgate:alpine
+    network_mode: host
