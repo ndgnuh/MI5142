@@ -42,7 +42,6 @@ begin
         from student where id = @student_id
     )
 end
-go
 
 GO
 print concat('A = ', str(dbo.grade_to_numeric('A')))

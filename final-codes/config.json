@@ -1,0 +1,6 @@
+{
+  "language": "tsql",
+  "tabWidth": 2,
+  "keywordCase": "upper",
+  "linesBetweenQueries": 2
+}
