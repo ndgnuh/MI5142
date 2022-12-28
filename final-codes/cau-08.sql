@@ -13,5 +13,14 @@ select
     end) as qualification
 from view_cpa
 
-go 
-select * from view_student_by_qualification
+go
+create or alter function get_student_qualification(@id int)
+returns varchar(10) as
+begin
+    declare @qual varchar(10)
+    select @qual = qualification from view_student_by_qualification where id = @id
+    return @qual
+end
+
+go
+print dbo.get_student_qualification(1018)

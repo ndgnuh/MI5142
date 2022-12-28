@@ -1,9 +1,5 @@
-GO
-drop view if exists view_loc_du_lieu;
-drop procedure if exists sp_loc_du_lieu
-
-GO
-CREATE view VIEW_LOC_DU_LIEU as
+go
+create or alter view view_loc_du_lieu as
 select
 student.id as student_id,
 student.name as student,
@@ -26,7 +22,7 @@ inner join instructor on teaches.id = instructor.id
 inner join classroom on section.building = classroom.building
 inner join time_slot on section.time_slot_id = time_slot.time_slot_id
 
-GO
+go
 create procedure sp_loc_du_lieu
 @query nvarchar(50), @value nvarchar(50) as
 begin
@@ -42,7 +38,7 @@ begin
    exec(@sql);
 end
 
-GO
+go
 exec sp_loc_du_lieu 'student', 'colin'
 exec sp_loc_du_lieu 'student_id','1018'
 exec sp_loc_du_lieu 'year','2006'

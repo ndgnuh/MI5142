@@ -1,6 +1,5 @@
-drop procedure if exists sp_loc_du_lieu2
 go
-create procedure sp_loc_du_lieu2 
+create or alter procedure sp_loc_du_lieu2 
 @tbl varchar(50)
 as 
 begin
@@ -28,7 +27,8 @@ go
 drop table if exists conditions
 create table conditions (field_name nvarchar(50), value nvarchar(50))
 insert into conditions values ('student', 'colin')
-insert into conditions values ('student_id', '1018')
+insert into conditions values ('instructor', 'Dale')
+insert into conditions values ('roomt', '134')
 
 exec sp_loc_du_lieu2 conditions
 drop table conditions

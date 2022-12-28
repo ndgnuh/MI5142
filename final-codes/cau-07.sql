@@ -12,4 +12,11 @@ select
 from student
 
 go
-select * from view_student_by_level
+create or alter PROCEDURE get_student_level
+@id int as 
+begin
+    select level from view_student_by_level where id = @id
+end
+
+go
+exec get_student_level 1018

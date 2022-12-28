@@ -1,8 +1,5 @@
-drop function if exists resolve_course_id
-drop function if exists search_prereq
-
 go
-create function resolve_course_id(@id int) 
+create or alter function resolve_course_id(@id int) 
 returns @deps table (pid int) 
 as
 begin
@@ -29,7 +26,7 @@ begin
 end
 
 go
-create function search_prereq(@title varchar(50))
+create or alter function search_prereq(@title varchar(50))
 returns @result table (
     course_id int, 
     title varchar(50),
@@ -68,8 +65,8 @@ as begin
     where course.course_id in (select pid from resolve_course_id(@pid))
     return 
 end
-go
 
+go
 select * from search_prereq('Game Programming')
 select * from get_prereq(359)
 select * from get_prereq(774)

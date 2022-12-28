@@ -54,9 +54,9 @@ begin
     commit tran txn
 end
 
-
-exec sp_register '41973', '200', '180', 'Saucon', 'D', '2007', 'Spring'
+go
 DELETE FROM takes WHERE ID=41973 AND course_id=200 
+exec sp_register '41973', '200', '180', 'Saucon', 'D', '2007', 'Spring'
 
 go
 select * from section where course_id = 313 
